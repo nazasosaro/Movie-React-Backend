@@ -8,7 +8,17 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://movie-react-frontend.onrender.com",
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+
 
 app.get("/", (req, res) => {
   res.send("Backend MovieApp is running");
