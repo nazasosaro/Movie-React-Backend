@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 const app = express();
 
 app.use(
@@ -13,6 +13,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://movie-react-frontend.onrender.com",
+      "https://searchmoviereact-app.netlify.app",
     ],
     methods: ["GET", "POST"],
     credentials: true,
